@@ -67,5 +67,17 @@ services:
     - cart
     - user
 
+  # frontend:
+  #   image: suryaprakashkosra/frontend:v1
+  #   container_name: frontend
+  #   ports:
+  #   - "80:80"
+  #   depends_on:
+  #   - catalogue
+  #   - cart
+  #   - user
+  #   - shipping
+  #   - payment
+
 
 
