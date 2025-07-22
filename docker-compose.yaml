@@ -6,11 +6,11 @@ networks:
 
 services:
   mongodb:
-    image: suryaprakashkosra/mongodb
+    image: suryaprakashkosra/mongodb:v1
     container_name: mongodb
   
   catalogue:
-    image: suryaprakashkosra/catalogue
+    image: suryaprakashkosra/catalogue:v1
     container_name: catalogue
     depends_on: 
     - mongodb
@@ -20,25 +20,25 @@ services:
     container_name: redis
   
   user:
-    image: suryaprakashkosra/user
+    image: suryaprakashkosra/user:v1
     container_name: user
     depends_on: 
     - redis
     - mongodb
 
   cart:
-    image: suryaprakashkosra/cart
+    image: suryaprakashkosra/cart:v1
     container_name: cart
     depends_on:
     - redis
     - catalogue
 
   mysql:
-    image: suryaprakashkosra/mysql
+    image: suryaprakashkosra/mysql:v1
     container_name: mysql
 
   shipping:
-    image: suryaprakashkosra/shipping
+    image: suryaprakashkosra/shipping:v1
     container_name: shipping
     depends_on:
     - mysql
