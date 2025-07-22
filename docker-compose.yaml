@@ -1,4 +1,4 @@
-network:
+networks:
   default:
     driver: bridge
     name: roboshop
@@ -43,5 +43,8 @@ services:
     depends_on:
     - mysql
     - cart
+
+  # rabbitmq:
+  #   image:
 
 
