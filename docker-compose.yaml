@@ -5,7 +5,7 @@ networks:
     #external: true #if we create by giving commmand in docker endgine then we have enalbe it
 
 services:
-  monogodb:
+  mongodb:
     image: suryaprakashkosra/mongodb
     container_name: mongodb
   
