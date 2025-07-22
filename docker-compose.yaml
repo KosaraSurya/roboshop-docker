@@ -1,0 +1,47 @@
+network:
+  default:
+    driver: bridge
+    name: roboshop
+    #external: true #if we create by giving commmand in docker endgine then we have enalbe it
+
+services:
+  monogodb:
+    image: suryaprakashkosra/mongodb
+    container_name: mongodb
+  
+  catalogue:
+    image: suryaprakashkosra/catalogue
+    container_name: catalogue
+    depends_on: 
+    - mongodb
+
+  redis: 
+    image: redis
+    container_name: redis
+  
+  user:
+    image: suryaprakashkosra/user
+    container_name: user
+    depends_on: 
+    - redis
+    - mongodb
+
+  cart:
+    image: suryaprakashkosra/cart
+    container_name: cart
+    depends_on:
+    - redis
+    - catalogue
+
+  mysql:
+    image: suryaprakashkosra/mysql
+    container_name: mysql
+
+  shipping:
+    image: suryaprakashkosra/shipping
+    container_name: shipping
+    depends_on:
+    - mysql
+    - cart
+
+
