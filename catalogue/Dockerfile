@@ -40,5 +40,4 @@ WORKDIR /opt/server
 USER roboshop
 # Here we are copying build-1 output into build-2 directory
 COPY --from=builder /opt/server /opt/server 
-RUN chown -R roboshop:roboshop /opt/server 
 CMD ["node","server.js"]
