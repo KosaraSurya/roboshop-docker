@@ -24,7 +24,7 @@
 
 # Here we are using multi stage labels to reduce the images size
 # Build-1(builder)
-FROM node:20-alpine3.21 As builder
+FROM node:20-alpine3.21 AS builder
 WORKDIR /opt/server
 COPY package.json /opt/server
 COPY *.js /opt/server/
