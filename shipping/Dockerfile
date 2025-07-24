@@ -1,6 +1,6 @@
 # Here we are using multi stage labels to reduce the images size
 # Build-1(builder)
-FROM maven
+FROM maven AS builder
 WORKDIR /opt/server
 COPY pom.xml .
 COPY src /opt/server/src
